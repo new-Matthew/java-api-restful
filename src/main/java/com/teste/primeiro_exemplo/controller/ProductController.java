@@ -1,9 +1,11 @@
 package com.teste.primeiro_exemplo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,5 +36,17 @@ public class ProductController {
     public Product toAdd(@RequestBody Product product){ // convete em produto (biding)
         return productService.toAdd(product);
     }
+
+    @DeleteMapping("/{id}")
+    public String deleteById(@PathVariable Integer id){
+        productService.deleteById(id);
+        return "Produto com ID: " + id + " Deletado com sucesso!";
+    }
+
+    @PutMapping("/{id}")
+    public Product toUpdate(@RequestBody Product product, @PathVariable Integer id){
+        return productService.toUpdate(id, product);
+    }
+
 }
 

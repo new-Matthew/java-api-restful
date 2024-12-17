@@ -57,6 +57,7 @@ public class ProductRepository {
     /**
      * Atualiza o produto na lista
      * @param product que será atualizado
+     * @param id do produto
      * @return Retorna o mesmo produto após atualizar a lista
      */
     public Product toUpdate(Product product){

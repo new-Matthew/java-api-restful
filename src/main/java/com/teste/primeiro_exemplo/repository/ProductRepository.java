@@ -1,11 +1,12 @@
 package com.teste.primeiro_exemplo.repository;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
 import com.teste.primeiro_exemplo.model.Product;
+import com.teste.primeiro_exemplo.model.exception.ResourceNotFoundException;
+
 import org.springframework.stereotype.Repository;
 
 
@@ -66,7 +67,7 @@ public class ProductRepository {
         Optional<Product> productFound = getById(product.getId());
 
         if (productFound.isEmpty()){
-            throw new InputMismatchException("Produto não encontrado");
+            throw new ResourceNotFoundException("Produto não encontrado");
         }
         
         // deleta o produto antigo e o novo produto vai ter o msm id

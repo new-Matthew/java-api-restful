@@ -1,7 +1,16 @@
 package com.teste.primeiro_exemplo.model;
+import jakarta.persistence.Entity; // javax virou jakarta
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+
+// através do hibernate faz entender que tem q pegar a classe produto e transformar em tabela no bd
+@Entity
 public class Product {
     //#region Atributes
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO) // estratégia de atualização pelo hibernate implementa
     private Integer id;
 
     private String name;

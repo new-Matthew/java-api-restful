@@ -1,7 +1,6 @@
-package com.teste.primeiro_exemplo.shared;
+package com.teste.primeiro_exemplo.view.model;
 
-public class ProductDTO { // desacopla model tranfere dados de controller para service
-
+public class ProductResponse { // backend vai retornar para o user/front
     //#region Atributes
     private Integer id;
 

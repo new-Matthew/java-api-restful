@@ -1,9 +1,8 @@
-package com.teste.primeiro_exemplo.shared;
+package com.teste.primeiro_exemplo.view.model;
 
-public class ProductDTO { // desacopla model tranfere dados de controller para service
+public class ProductRequest { // front/user vai mandar para o back
 
     //#region Atributes
-    private Integer id;
 
     private String name;
 
@@ -15,13 +14,6 @@ public class ProductDTO { // desacopla model tranfere dados de controller para s
     //#endregion
 
     //#region Getters and Setters
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
